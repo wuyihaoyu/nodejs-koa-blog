@@ -63,6 +63,7 @@
     "require-directory": "^2.1.1",
     "sequelize": "^6.6.5",
     "supertest": "^4.0.2",
+    "tesseract.js": "^2.1.5",
     "validator": "^10.11.0",
     "xss": "^1.0.6"
   },

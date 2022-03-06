@@ -62,6 +62,10 @@
           @imgDel="$imgDel"
         />
       </el-form-item>
+      
+      <el-form-item label="* 文字识别">
+        <article-app />
+      </el-form-item>
 
       <el-form-item>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
@@ -71,10 +75,13 @@
         >立即创建</el-button>
       </el-form-item>
     </el-form>
+
+
   </section>
 </template>
 
 <script>
+import ArticleApp from './App.vue'
 import { mapState } from 'vuex'
 import { create } from '@/api/article'
 import { list } from '@/api/category'
@@ -83,6 +90,9 @@ import axios from 'axios'
 
 export default {
   name: 'CategoryCreate',
+  components: {
+    ArticleApp
+  },
   data() {
     return {
       token: '',
@@ -263,5 +273,8 @@ export default {
   width: 178px;
   height: 178px;
   display: block;
+}
+.article-app{
+  width: 100%;
 }
 </style>
