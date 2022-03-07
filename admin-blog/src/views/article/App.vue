@@ -7,11 +7,11 @@
       </div>
       <div id="text" class="box">{{text}}</div>
       <div class="box">
-          <input id="write" type="text" v-model="text">
           <div>
-              <button v-on:click="uploadPlans">上传文件</button>
-              <button v-on:click="clear">重置文字</button>
-              <button v-on:click="read">语音读取</button>
+              <el-button v-on:click="uploadPlans">上传文件</el-button>
+              <el-button v-on:click="clear">重置文字</el-button>
+              <el-button v-on:click="read">语音读取</el-button>
+              <el-button v-on:click="concat">拼接文字</el-button>
           </div>
       </div>
      
@@ -93,9 +93,7 @@ export default {
         return;
       }else{
           const { data: { text }, } = await worker.recognize(file);
-            // console.log(text);
-            alert(text);
-            this.text=text; 
+          this.text=text; 
       }
      },
     clear(){
@@ -117,6 +115,9 @@ export default {
           speechSynthesis.speak(this.speechInstance);
           
         }
+    },
+    concat(){
+      this.$emit("listenEvent",this.text)
     }
   },
  
@@ -146,5 +147,8 @@ export default {
  .box{
   flex: 1;
   border:rgb(252, 212, 212) solid;
+ }
+ img{
+   width: 100%;
  }
 </style>

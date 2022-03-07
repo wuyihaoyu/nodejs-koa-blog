@@ -63,8 +63,8 @@
         />
       </el-form-item>
       
-      <el-form-item label="* 文字识别">
-        <article-app />
+      <el-form-item label="* 文字识别" >
+        <article-app @listenEvent="pushmsg" />
       </el-form-item>
 
       <el-form-item>
@@ -220,6 +220,12 @@ export default {
     // 重置表单
     resetForm(formName) {
       this.$refs[formName].resetFields()
+    },
+
+    //拼接字符串
+    pushmsg(data){
+        data=data.replace(/\s/g,"")
+        this.ruleForm.content += data
     },
     // 创建文章
     async createArticle() {
