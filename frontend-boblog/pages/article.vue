@@ -1,7 +1,9 @@
 <template>
   <div>
+    <el-button @click="read" class="suspension">語音播放</el-button>
+    <el-button @click="noread" class="suspen">停止播放</el-button>
     <div class="response-wrap">
-      <div class="article">
+      <div class="article">   
         <h1 class="title">
           {{ article.title }}
         </h1>
@@ -99,6 +101,25 @@ export default {
     this.initData()
   },
   methods: {
+    read(){
+      var msg;
+      var reg = /[\u4e00-\u9fa5]/g;
+      var names = this.article.content.match(reg);
+      
+      if(names){
+         msg = names.join("");
+         console.log(msg)
+         this.speechInstance = new SpeechSynthesisUtterance(msg);
+         speechSynthesis.speak(this.speechInstance);
+      }else{
+        alert("此篇文章無法語音播放！")
+        return
+      }
+    },
+    noread(){
+      window.speechSynthesis.cancel()
+    },
+
     initData() {
       this.$nextTick(() => {
         const ProgressIndicator = require('@/lib/progress-indicator')
@@ -121,6 +142,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.suspension{
+  position:fixed;
+  background-color: rgb(167, 167, 247);
+  color: #fff;
+  left: 5px;
+  top: 150px;
+}
+.suspen{
+  position: fixed;
+  background-color: rgb(167, 167, 247);
+  color: #fff;
+  top: 200px;
+  left: 5px;
+}
+
+/deep/ .el-button+.el-button {
+  margin-left: 0;
+}
+
 ul,
 li {
   margin: 0;
