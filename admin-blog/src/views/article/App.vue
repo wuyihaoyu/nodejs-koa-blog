@@ -11,7 +11,7 @@
               <el-button v-on:click="uploadPlans">上传文件</el-button>
               <el-button v-on:click="clear">重置文字</el-button>
               <el-button v-on:click="read">语音读取</el-button>
-              <el-button v-on:click="concat">拼接文字</el-button>
+              <el-button v-on:click="concat">內容拼接</el-button>
           </div>
       </div>
      

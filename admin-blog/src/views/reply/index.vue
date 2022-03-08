@@ -75,9 +75,15 @@
             <div v-html="mdRender(scope.row.content)" />
           </template>
         </el-table-column>
-        <el-table-column label="回复人信息" align="center">
+        <el-table-column label="回复人信息" >
           <template slot-scope="scope">
-            {{ scope.row.user_info || "匿名" }}
+              <div v-if="scope.row.user_info">
+              <p>ID:&nbsp;&nbsp;{{scope.row.user_info.id}}</p>
+              <p>Username:&nbsp;{{scope.row.user_info.username}}</p>
+              <p>Email:&nbsp;{{scope.row.user_info.email}}</p>
+              <p>Status:&nbsp;&nbsp;{{scope.row.user_info.status}}</p> 
+            </div>
+            <div v-else> 匿名</div> 
           </template>
         </el-table-column>
         <el-table-column label="回复文章" align="center">

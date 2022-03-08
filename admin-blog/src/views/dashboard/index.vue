@@ -1,7 +1,106 @@
 <template>
   <div class="dashboard-container">
+    <div class="flexbox">
     <!-- <div class="dashboard-text">Welcome home {{ name }} !</div> -->
 <div class="wrapper">
+      <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+           <div class="container">
+              <div class="front">
+                 <div class="inner">
+                     <p><i>用戶管理</i> </p>
+                  <span><i>今天也要加油！</i></span>
+                 </div>
+            </div>
+            <div class="back">
+             <div class="inner">
+                <router-link to="/user"><p><i>用戶管理</i></p></router-link>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+  </div>
+
+  <div class="wrapper">
+      <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+           <div class="container">
+              <div class="front">
+                 <div class="inner">
+                     <h1><i>Welcome Home {{ name }}</i></h1>
+                  <span><i>你好</i></span>
+                 </div>
+            </div>
+            <div class="back">
+             <div class="inner">
+            <p><i>今天也要加油哦</i></p>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+  </div>
+  <div class="wrapper ">
+      <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+           <div class="container">
+              <div class="front">
+                 <div class="inner">
+                     <p><i>评论管理</i> </p>
+                  <span><i>你好</i></span>
+                 </div>
+            </div>
+            <div class="back">
+             <div class="inner">
+            <router-link to="/comment"><p><i>评论管理</i></p></router-link>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+  </div>
+  </div>
+  <div class="flexbox">
+  <div class="wrapper ">
+      <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+           <div class="container">
+              <div class="front">
+                 <div class="inner">
+                     <p><i>回复管理</i> </p>
+                  <span><i>你好</i></span>
+                 </div>
+            </div>
+            <div class="back">
+             <div class="inner">
+              <router-link to="/reply"><p><i>回复管理</i></p></router-link>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+  </div>
+  <div class="wrapper ">
+      <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+           <div class="container">
+              <div class="front">
+                 <div class="inner">
+                     <p><i>數據統計</i> </p>
+                  <span><i>你好</i></span>
+                 </div>
+            </div>
+            <div class="back">
+             <div class="inner">
+            <p><i>今天也要加油哦</i></p>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+  </div>
+  <div class="wrapper ">
       <div class="cols">
         <div class="col" ontouchstart="this.classList.toggle('hover');">
            <div class="container">
@@ -20,6 +119,7 @@
        </div>
       </div>
   </div>
+  </div>
 
   </div>  
 </template>
@@ -36,15 +136,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .dashboard {
-//   &-container {
-//     margin: 30px;
-//   }
-//   &-text {
-//     font-size: 30px;
-//     line-height: 46px;
-//   }
-// }
 
 *{
   margin: 0;
@@ -52,6 +143,10 @@ export default {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+.flexbox{
+  display: flex;
+}
+
 .wrapper{
   width: 90%;
   margin: 0 auto;
@@ -70,7 +165,7 @@ export default {
 }
  
 .col{
-  width: calc(25% - 2rem);
+  width: calc(65% - 2rem);
   margin: 1rem;
   cursor: pointer;
 }
@@ -102,7 +197,7 @@ export default {
 }
  
 .back{
-  background: #cedce7;
+  background: #fff;
   background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
@@ -118,7 +213,6 @@ export default {
     content: '';
     display: block;
     opacity: .6;
-    background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     border-radius: 10px;
