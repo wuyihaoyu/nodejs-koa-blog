@@ -158,6 +158,20 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/data',
+    component: Layout,
+    redirect: '/data/index',
+    name: 'datacount',
+    children: [
+      {
+        path: 'index',
+        name: 'DataIndex',
+        component: () => import('@/views/data/index'),
+        meta: { title: '数据统计', icon: 'table' }
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
