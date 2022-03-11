@@ -168,7 +168,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'DataIndex',
         component: () => import('@/views/data/index'),
-        meta: { title: '数据统计', icon: 'table' }
+        meta: { title: '站点统计', icon: 'table' }
       }
     ]
   },

@@ -18,7 +18,16 @@
             <p>文章：{{ item.article.title }}</p>
             <p>评论内容：{{ item.content }}</p>
             <p>评论时间：{{ item.created_at }}</p>
-            <p>回复：{{ item.reply_list || '无' }}</p>
+            <!-- <p>回复：{{  item.reply_list || '无' }}</p> -->
+            <div v-if="item.reply_list">
+              <div v-for="reply in item.reply_list" :key="reply.id" >
+              某同学 回复内容:{{reply.content}}
+            </div>
+            </div>
+            <div v-else>
+              回复内容:无
+            </div>
+            
           </li>
         </ul>
         <div class="pagination">
