@@ -87,13 +87,13 @@
            <div class="container">
               <div class="front">
                  <div class="inner">
-                     <p><i>數據統計</i> </p>
+                     <p><i>站点統計</i> </p>
                   <span><i>你好</i></span>
                  </div>
             </div>
             <div class="back">
              <div class="inner">
-            <p><i>今天也要加油哦</i></p>
+             <router-link to="/data"><p><i>站点统计</i></p></router-link>
              </div>
            </div>
          </div>
