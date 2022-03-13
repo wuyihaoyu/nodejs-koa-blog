@@ -2,6 +2,7 @@
   <div>
     <el-button @click="read" class="suspension">語音播放</el-button>
     <el-button @click="noread" class="suspen">停止播放</el-button>
+    <el-button @click="copymsg" class="copy"  :data-clipboard-text="siteHost" id="copy_zfb">分享链接</el-button>
     <div class="response-wrap">
       <div class="article">   
         <h1 class="title">
@@ -33,6 +34,7 @@
         alt="preload"
       />
     </vue-lazy-component>
+    <div class="hide" id="hide">{{siteHost}}</div>
   </div>
 </template>
 <script>
@@ -40,7 +42,7 @@ import { getArticleDetail } from '@/request/api/article'
 import ArticleComment from '@/components/article/ArticleComment'
 import { mapState } from 'vuex'
 import { component as VueLazyComponent } from '@xunlei/vue-lazy-component'
-
+import Clipboard from 'clipboard'
 export default {
   name: 'ArticleDetail',
   components: {
@@ -49,6 +51,7 @@ export default {
   },
   async asyncData(context) {
     const { id } = context.query
+    const host = process.server && context.req.headers.host
     const params = {
       id,
       is_markdown: true,
@@ -56,13 +59,14 @@ export default {
     const [err, res] = await getArticleDetail(params)
     if (!err) {
       return {
+        siteHost: host + context.route.fullPath,
         article: res.data.data,
       }
     }
   },
   data() {
     return {
-      isLogin: false,
+      isLogin: false
     }
   },
   async fetch({ store }) {
@@ -120,6 +124,20 @@ export default {
       window.speechSynthesis.cancel()
     },
 
+    copymsg(){
+           var clipboard = new Clipboard('#copy_zfb');
+           clipboard.on('success', function(e) {
+          e.clearSelection(); //选中需要复制的内容
+          alert("复制成功！");
+          clipboard.destroy()
+           });
+          clipboard.on('error', function(e) {
+          alert("当前浏览器不支持此功能，请手动复制。")
+          clipboard.destroy()
+         });
+        },
+    
+
     initData() {
       this.$nextTick(() => {
         const ProgressIndicator = require('@/lib/progress-indicator')
@@ -155,6 +173,13 @@ export default {
   color: #fff;
   top: 200px;
   left: 5px;
+}
+.copy{
+  position: fixed;
+  background-color: rgb(167, 167, 247);
+  color: #fff;
+  top: 250px;
+  left: 5px; 
 }
 
 /deep/ .el-button+.el-button {
@@ -212,6 +237,9 @@ li {
   position: fixed;
   bottom: 32px;
   right: 32px;
+}
+.hide{
+   display: none;
 }
 
 @media screen and (max-width: 540px) {
