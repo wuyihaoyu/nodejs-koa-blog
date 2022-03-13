@@ -59,7 +59,7 @@ export default {
     const [err, res] = await getArticleDetail(params)
     if (!err) {
       return {
-        siteHost: host + context.route.fullPath,
+        host,
         article: res.data.data,
       }
     }
@@ -92,6 +92,12 @@ export default {
         return this.article.admin_info.nickname
       }
       return ''
+    },
+    siteHost() {
+      if (this.host) {
+        return this.host +  this.$route.fullPath
+      }
+      return window && window.location.href
     }
   },
   beforeDestroy() {
