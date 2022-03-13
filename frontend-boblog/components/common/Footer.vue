@@ -1,7 +1,7 @@
 <template>
   <div class="response-wrap footer">
     <div class="site">
-      <span>© 波波博客 - BoBlog.com</span>
+      <span>© 个人博客 - BoBlog.com</span>
       <span>itbo@163.com</span>
     </div>
     <div class="copyright">
@@ -10,7 +10,6 @@
         href="https://beian.miit.gov.cn"
         target="_blank"
       >
-        粤ICP备2020120493号
       </a>
     </div>
   </div>
