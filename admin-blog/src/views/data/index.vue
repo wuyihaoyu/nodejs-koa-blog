@@ -4,6 +4,7 @@
   <div class="datetime">
     <datetime :styleObj="{}"></datetime>
     <div class="msg"><span><h4>你已经发表了<i> {{msgnum}} </i>篇文章，总浏览量为<i> {{seenum}} </i>次。</h4></span></div>
+    <div id="he-plugin-standard"></div>
   </div>
   <hr>
      <div id="main" style="width: 700px;height:400px;margin:0 auto"></div>
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+
+
 import * as echarts from 'echarts';
 
 import { list } from '@/api/article';
@@ -52,6 +55,24 @@ export default {
 
   created(){
     this.getCategoryList()
+  },
+  mounted(){
+    window.WIDGET = {
+   "CONFIG": {
+    "layout": "1",
+    "width": "450",
+    "height": "150",
+    "background": "1",
+    "dataColor": "FFFFFF",
+    "borderRadius": "5",
+    "key": "bb66d2ce3a2b4226b0b2a217ed249fc3"
+  }
+}
+  let script = document.createElement('script')
+       script.type = 'text/javascript'
+       script.src = 'https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0'
+       document.getElementsByTagName('head')[0].appendChild(script)
+  
   },
   methods:{
      async getCategoryList() {
@@ -182,6 +203,7 @@ option && myChart.setOption(option);
 .msg{
   display: flex;
   align-items: center;
+  margin-right: 330px;
 }
 
 

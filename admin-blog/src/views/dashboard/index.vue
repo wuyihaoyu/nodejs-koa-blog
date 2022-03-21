@@ -9,7 +9,6 @@
               <div class="front">
                  <div class="inner">
                      <p><i>用戶管理</i> </p>
-                  <span><i>今天也要加油！</i></span>
                  </div>
             </div>
             <div class="back">
@@ -48,7 +47,6 @@
               <div class="front">
                  <div class="inner">
                      <p><i>评论管理</i> </p>
-                  <span><i>你好</i></span>
                  </div>
             </div>
             <div class="back">
@@ -69,7 +67,6 @@
               <div class="front">
                  <div class="inner">
                      <p><i>回复管理</i> </p>
-                  <span><i>你好</i></span>
                  </div>
             </div>
             <div class="back">
@@ -88,7 +85,6 @@
               <div class="front">
                  <div class="inner">
                      <p><i>站点統計</i> </p>
-                  <span><i>你好</i></span>
                  </div>
             </div>
             <div class="back">
@@ -106,13 +102,12 @@
            <div class="container">
               <div class="front">
                  <div class="inner">
-                     <p><i>Welcome Home {{ name }}</i> </p>
-                  <span><i>你好</i></span>
+                     <p><i>文章管理</i> </p>
                  </div>
             </div>
             <div class="back">
              <div class="inner">
-            <p><i>今天也要加油哦</i></p>
+           <router-link to="/article/index"><p><i>文章管理</i></p></router-link>
              </div>
            </div>
          </div>
@@ -192,7 +187,7 @@ export default {
   min-height: 280px;
   height: auto;
   border-radius: 10px;
-  color: #fff;
+  color: rgb(94, 45, 185);
   font-size: 1.5rem;
 }
  
