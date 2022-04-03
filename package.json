@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liangfengbo/nodejs-koa2-blog.git"
+    "url": "git+https://github.com/wuyihaoyu"
   },
   "keywords": [
     "nodejs",
@@ -23,10 +23,10 @@
     "Node.js实战",
     "ejs 服务端渲染"
   ],
-  "author": "Fengbo Liang, https://github.com/lfb",
+  "author": "Andre Lin, https://github.com/wuyihaoyu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lfb/nodejs-koa2-blog/issues"
+    "url": "https://github.com/wuyihaoyu"
   },
   "_moduleAliases": {
     "@": ".",
@@ -40,7 +40,7 @@
     "@service": "app/service",
     "@validators": "app/validators"
   },
-  "homepage": "https://github.com/lfb/nodejs-koa2-blog#readme",
+  "homepage": "https://github.com/wuyihaoyu",
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "basic-auth": "^2.0.1",
