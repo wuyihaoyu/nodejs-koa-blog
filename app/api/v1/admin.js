@@ -3,14 +3,14 @@
  * @description Administrator's routing API interface
  */
 
-const Router = require('koa-router')
+const Router = require('koa-router')                    //导入路由模块
 
 const {
   RegisterValidator,
   AdminLoginValidator
 } = require('@validators/admin')
 
-const { AdminDao } = require('@dao/admin');
+const { AdminDao } = require('@dao/admin');           //
 const { Auth } = require('@middlewares/auth');
 const { LoginManager } = require('@service/login');
 const { Resolve } = require('@lib/helper');
@@ -19,28 +19,25 @@ const res = new Resolve();
 const AUTH_ADMIN = 16;
 
 const router = new Router({
-  prefix: '/api/v1/admin'
+  prefix: '/api/v1/admin'                               //添加url前缀/api/v1/admin
 })
 
-// 管理员注册
-router.post('/register', async (ctx) => {
-  // 通过验证器校验参数是否通过
-  const v = await new RegisterValidator().validate(ctx);
-
-  // 创建管理员
-  const [err, data] = await AdminDao.create({
+router.post('/register', async (ctx) => {               // 管理员注册接口
+ 
+  const v = await new RegisterValidator().validate(ctx);// 通过验证器校验参数是否通过
+  const [err, data] = await AdminDao.create({           // 创建管理员
     email: v.get('body.email'),
     password: v.get('body.password2'),
     nickname: v.get('body.nickname')
   });
 
-  if (!err) {
+  if (!err) {                                           //没有报错就返回结果
     // 返回结果
     ctx.response.status = 200;
-    ctx.body = res.json(data);
+    ctx.body = res.json(data);                          //将数据写回响应里
 
   } else {
-    ctx.body = res.fail(err);
+    ctx.body = res.fail(err);                           //如果报错，报错信息就写进响应里
   }
 })
 

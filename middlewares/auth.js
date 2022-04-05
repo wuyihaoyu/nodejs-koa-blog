@@ -1,5 +1,5 @@
-const basicAuth = require('basic-auth')
-const jwt = require('jsonwebtoken')
+const basicAuth = require('basic-auth')       //验证方案
+const jwt = require('jsonwebtoken')           //导入jwt验证模块，用户和服务器之间传递安全可靠的信息
 
 class Auth {
   constructor(level) {
@@ -16,7 +16,7 @@ class Auth {
     // token body header
     // HTTP 规定 身份验证机制 HttpBasicAuth
     return async (ctx, next) => {
-      const tokenToken = basicAuth(ctx.req);
+      const tokenToken = basicAuth(ctx.req);//basicAuth(req)将从req.headers.authorization中解析出用户输入的用户名和密码和token
 
       let errMsg = "无效的token";
       // 无带token
@@ -25,7 +25,7 @@ class Auth {
         throw new global.errs.Forbidden(errMsg);
       }
 
-      try {
+      try {                  //token秘钥验证,jwt.verify(验证的token,加密的密文,回调)
         var decode = jwt.verify(tokenToken.name, global.config.security.secretKey);
 
       } catch (error) {
