@@ -1,26 +1,26 @@
-const validator = require('validator')
+const validator = require('validator')        //导入数据验证和过滤模块
 const {
   ParameterException
-} = require('./http-exception')
+} = require('./http-exception')               //导入报错处理信息模块
 const {
   get,
   last,
   set,
   cloneDeep
-} = require("lodash")
+} = require("lodash")                         //导入lodash模块
 const {
   findMembers
-} = require('./util')
+} = require('./util')                         //导入findMembers函数
 
 
 class LinValidator {
-  constructor() {
+  constructor() {                             //类LinValidator的构造函数
     this.data = {}
     this.parsed = {}
   }
 
 
-  _assembleAllParams(ctx) {
+  _assembleAllParams(ctx) {                   //请求的ctx上下文
     return {
       body: ctx.request.body,
       query: ctx.request.query,

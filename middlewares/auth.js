@@ -1,4 +1,4 @@
-const basicAuth = require('basic-auth')       //验证方案
+const basicAuth = require('basic-auth')       //验证方案，Auth.js权限验证中间件
 const jwt = require('jsonwebtoken')           //导入jwt验证模块，用户和服务器之间传递安全可靠的信息
 
 class Auth {
@@ -42,12 +42,12 @@ class Auth {
         throw new global.errs.Forbidden(errMsg);
       }
 
-      ctx.auth = {
+      ctx.auth = {              //ctx上下文携带uid，scope
         uid: decode.uid,
         scope: decode.scope
       }
 
-      await next()
+      await next()             //进入下一个中间件
     }
   }
 

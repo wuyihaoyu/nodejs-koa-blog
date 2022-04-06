@@ -1,5 +1,5 @@
-class HttpException extends Error {
-  constructor(msg = '服务器异常', errorCode = 10000, code = 400) {
+class HttpException extends Error {   //继承原生内置的错误模块
+  constructor(msg = '服务器异常', errorCode = 10000, code = 400) { 
     super()
     this.errorCode = errorCode
     this.code = code

@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = {                //数据库配置
   environment: 'dev',
   database: {
     dbName: 'boblog',

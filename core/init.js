@@ -2,8 +2,8 @@ const Router = require('koa-router')
 const requireDirectory = require('require-directory')
 
 class InitManager {
-  static initCore(app) {
-    // 入口方法
+  static initCore(app) {                             //静态方法，不用通过类的实例化，可以通过类名直接调用
+    // 入口方法 
     InitManager.app = app;                           //挂载实例在类上
     InitManager.initLoadRouters()
     InitManager.loadHttpException()

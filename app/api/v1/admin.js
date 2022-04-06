@@ -8,9 +8,9 @@ const Router = require('koa-router')                    //导入路由模块
 const {
   RegisterValidator,
   AdminLoginValidator
-} = require('@validators/admin')
+} = require('@validators/admin')                       //导入管理员数据验证模块 
 
-const { AdminDao } = require('@dao/admin');           //
+const { AdminDao } = require('@dao/admin');            //
 const { Auth } = require('@middlewares/auth');
 const { LoginManager } = require('@service/login');
 const { Resolve } = require('@lib/helper');
