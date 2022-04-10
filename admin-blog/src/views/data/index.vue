@@ -95,7 +95,10 @@ export default {
     },
     Separatedata(){
       let titleList = this.list.map(item => {
-      return item.category_info.name  })
+        if(item.category_info){  
+          return item.category_info.name }
+        else return "暂未分类"
+      })
       for(var i in this.getRepeatNum(titleList)){
               this.num.push(this.getRepeatNum(titleList)[i])
               this.msgnum+=this.getRepeatNum(titleList)[i]
