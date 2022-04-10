@@ -2,11 +2,11 @@
   <div class="form-wrap">
     <div class="form">
       <div class="form-bg">
-        <img src="https://cdn.boblog.com/login-bg.png" alt="login" />
+        <img src="../../assets/css/login.png" alt="login" />
       </div>
       <div class="form-list">
         <div class="logo">
-          <img src="https://cdn.boblog.com/logo.png" alt="logo" />
+          <img src="../../assets/css/logo.png" alt="logo" />
         </div>
         <div v-if="!isLogin" class="form-item">
           <input
@@ -172,7 +172,7 @@ export default {
 .form-bg {
   width: 500px;
   font-size: 0;
-
+  
   img {
     width: 100%;
   }

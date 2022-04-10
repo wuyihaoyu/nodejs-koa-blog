@@ -12,7 +12,7 @@
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <!--          <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar">-->
-          <img :src="avatar" class="user-avatar">
+          <img src="../../assets/404_images/logo.png" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -21,7 +21,7 @@
           </router-link>
           <a
             target="_blank"
-            href="https://github.com/PanJiaChen/vue-admin-template/"
+            href="https://github.com/wuyihaoyu"
           >
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
@@ -130,7 +130,7 @@ export default {
 
         .user-avatar {
           cursor: pointer;
-          height: 50px;
+          height: 30px;
           border-radius: 10px;
         }
 

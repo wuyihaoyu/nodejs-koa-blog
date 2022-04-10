@@ -29,7 +29,7 @@
               </el-dropdown-menu>
             </el-dropdown>
           </div>
-          <a href="https://github.com/lfb/nodejs-koa-blog" target="_blank" class="nav-item">
+          <a href="https://github.com/wuyihaoyu" target="_blank" class="nav-item">
             Github
           </a>
         </div>
@@ -145,10 +145,10 @@ export default {
   cursor: pointer;
   box-sizing: border-box;
   display: block;
-  width: 100px;
+  width: 125px;
   height: 56px;
-  background: url('https://cdn.boblog.com/logo.png') center center no-repeat;
-  background-size: 100px;
+  background: url('../../assets/css/logo.png') center center no-repeat;
+  background-size: 130px;
 }
 .nav {
   box-sizing: border-box;

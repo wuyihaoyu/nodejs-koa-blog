@@ -10,7 +10,7 @@ const {
 
 
 const sequelize = new Sequelize(dbName, user, password, { //分别传递参数
-  dialect: 'mysql', /* 选择 'mysql' | 'mariadb' | 'postgres' | 'mssql' 其一 */
+  dialect: 'mysql', /* 选择 'mysql' | 'mariadb' | 'postgres' | 'mssql' 其一 驱动 */
   host,
   port,
   logging: false,
@@ -30,7 +30,7 @@ const sequelize = new Sequelize(dbName, user, password, { //分别传递参数
           exclude: ['password', 'updated_at', 'deleted_at', 'created_at']
         }
       },
-      iv: {
+      iv: {                           //排除返回字段
         attributes: {
           exclude: ['content', 'password', 'updated_at', 'deleted_at']
         }
