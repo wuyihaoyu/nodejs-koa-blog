@@ -62,7 +62,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.userInfo.username} - 个人中心  - boblog.com`,
+      title: `${this.userInfo.username} - 个人中心  - blog.com`,
       meta: [
         {
           name: 'keywords',
@@ -71,7 +71,7 @@ export default {
         },
         {
           name: 'description',
-          content: '个人博客 - BoBlog.com，专注于前端开发技术，前端性能优化！',
+          content: '个人博客 - Blog.com，专注于前端开发技术，前端性能优化！',
         },
       ],
     }

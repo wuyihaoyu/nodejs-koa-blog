@@ -134,7 +134,7 @@ class ArticleDao {
       filter.category_id = category_id;
     }
 
-    // 筛选方式：存在搜索关键字
+    // 筛选方式：存在搜索关键字,sequelize一个搜索值模糊查询表的两个列
     if (keyword) {
       filter.title = {
         [Op.like]: `%${keyword}%`
